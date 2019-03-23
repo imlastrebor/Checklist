@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <input type="text" name="" value="" id="textBox" autofocus>
+    <input type="submit" name="" value="Add to list" onclick="addToList()">
+<div class="">
+    <h1 id="list"></h1>
+</div>
+    <script type="text/javascript">
+
+    function addToList() {
+      var newItem = "";
+      var text = document.getElementById("textBox").value;
+      if (text==="") {
+        alert("Please Fill Field");
+        return false;
+      }
+      else {
+        var newItem = document.createElement("H1");
+        newItem.innerHTML = text;
+        document.body.appendChild(newItem);
+        document.getElementById("textBox").focus();
+        document.getElementById("textBox").value = '';
+        return true;
+    }
+    }
+    </script>
+
+  </body>
+</html>
