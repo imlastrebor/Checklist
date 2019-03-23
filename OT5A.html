@@ -8,26 +8,46 @@
 
     <input type="text" name="" value="" id="textBox" autofocus>
     <input type="submit" name="" value="Add to list" onclick="addToList()">
-<div class="">
-    <h1 id="list"></h1>
-</div>
+    <input type="submit" name="" value="Clear list" onclick="clearList()">
+
+    <div id="checklist">
+    </div>
+
     <script type="text/javascript">
 
     function addToList() {
-      var newItem = "";
-      var text = document.getElementById("textBox").value;
-      if (text==="") {
-        alert("Please Fill Field");
-        return false;
+
+        var text = document.getElementById("textBox").value;
+
+        //Alerts if user doesn't filled field
+        if (text==="") {
+          //Call alert
+          alert("Please Fill Field");
+          //Focus back to field
+          document.getElementById("textBox").focus();
+          return false;
+        }
+
+        else {
+          //Variable for new h1 element
+          var newItem = document.createElement("H1");
+          //Add users text to h1
+          newItem.innerHTML = text;
+          //Adds new h1 elements to checklist div
+          document.getElementById("checklist").appendChild(newItem);
+          //Focus back to field
+          document.getElementById("textBox").focus();
+          //Clears field
+          document.getElementById("textBox").value = '';
+          return true;
       }
-      else {
-        var newItem = document.createElement("H1");
-        newItem.innerHTML = text;
-        document.body.appendChild(newItem);
-        document.getElementById("textBox").focus();
-        document.getElementById("textBox").value = '';
-        return true;
     }
+
+    function clearList(){
+      //Clears checklist div
+      document.getElementById("checklist").innerHTML = "";
+      //Focus back to field
+      document.getElementById("textBox").focus();
     }
     </script>
 
