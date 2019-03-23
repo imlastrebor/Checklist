@@ -15,6 +15,7 @@
 
     <script type="text/javascript">
 
+
     function addToList() {
 
         var text = document.getElementById("textBox").value;
@@ -25,7 +26,6 @@
           alert("Please Fill Field");
           //Focus back to field
           document.getElementById("textBox").focus();
-          return false;
         }
 
         else {
@@ -35,11 +35,14 @@
           newItem.innerHTML = text;
           //Adds new h1 elements to checklist div
           document.getElementById("checklist").appendChild(newItem);
+          //Function that removes list item when item is clicked
+            newItem.onclick = function() {
+              this.parentNode.removeChild(this);
+          }
           //Focus back to field
           document.getElementById("textBox").focus();
           //Clears field
           document.getElementById("textBox").value = '';
-          return true;
       }
     }
 
@@ -49,6 +52,7 @@
       //Focus back to field
       document.getElementById("textBox").focus();
     }
+
     </script>
 
   </body>
