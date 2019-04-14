@@ -2,34 +2,28 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="magic.js">
+
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Open+Sans" rel="stylesheet">
   </head>
   <body>
 
-    <input type="text" name="" value="" id="textBox" autofocus>
-    <input type="submit" name="" value="Add to list" onclick="addToList()">
-<div class="">
-    <h1 id="list"></h1>
-</div>
-    <script type="text/javascript">
+  <div class="container">
+    <h1 class="header">Checklist</h1>
+      <div class="listFeatures">
+        <input type="text" name="" value="" id="textBox" autofocus>
+        <input type="submit" name="" value="Add to list" id="buttonAdd" onclick="addToList()">
+        <input type="submit" name="" value="Clear list" id="buttonClear" onclick="clearList()">
+      </div>
+      <p class="header" id="listHeader">Your list</p>
 
-    function addToList() {
-      var newItem = "";
-      var text = document.getElementById("textBox").value;
-      if (text==="") {
-        alert("Please Fill Field");
-        return false;
-      }
-      else {
-        var newItem = document.createElement("H1");
-        newItem.innerHTML = text;
-        document.body.appendChild(newItem);
-        document.getElementById("textBox").focus();
-        document.getElementById("textBox").value = '';
-        return true;
-    }
-    }
-    </script>
+      <div id="checkList">
+      </div>
+    </div>
 
   </body>
 </html>
