@@ -1,0 +1,66 @@
+body{
+  background-color: #F2F2F2;
+  font-size: 1.2em;
+  color: #001A38;
+  font-family: 'Open Sans', sans-serif;
+}
+.container{
+  width: 95%;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 5%;
+  background-color: #F9F9F9;
+  border-radius: 12px;
+  padding: 20px 0px;
+  -webkit-box-shadow: 10px 10px 15px -7px rgba(0,0,0,0.13);
+  -moz-box-shadow: 10px 10px 15px -7px rgba(0,0,0,0.13);
+  box-shadow: 10px 10px 15px -7px rgba(0,0,0,0.13);
+}
+.header{
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+}
+.listFeatures{
+margin: auto;
+width: 12em;
+}
+#listHeader{
+  display: none;
+}
+#checkList{
+  padding: 0px 20px;
+}
+#newListItem{
+  color:#000;
+  border-bottom: 1px solid #96DCFF;
+  font-size: 0.8em;
+}
+
+input[type=text]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 0.8em;
+}
+input[type=submit]{
+  width: auto;
+  display: block;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.7em;
+}
+#buttonAdd{
+  background-color: #0097E2;
+}
+#buttonClear{
+  background-color: #0097E2;
+  display: none;
+}

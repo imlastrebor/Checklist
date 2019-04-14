@@ -2,19 +2,27 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Open+Sans" rel="stylesheet">
   </head>
   <body>
 
-    <input type="text" name="" value="" id="textBox" autofocus>
-    <input type="submit" name="" value="Add to list" onclick="addToList()">
-    <input type="submit" name="" value="Clear list" onclick="clearList()">
+  <div class="container">
+    <h1 class="header">Checklist</h1>
+      <div class="listFeatures">
+        <input type="text" name="" value="" id="textBox" autofocus>
+        <input type="submit" name="" value="Add to list" id="buttonAdd" onclick="addToList()">
+        <input type="submit" name="" value="Clear list" id="buttonClear" onclick="clearList()">
+      </div>
+      <p class="header" id="listHeader">Your list</p>
 
-    <div id="checklist">
+      <div id="checkList">
+      </div>
     </div>
 
     <script type="text/javascript">
-
 
     function addToList() {
 
@@ -30,11 +38,13 @@
 
         else {
           //Variable for new h1 element
-          var newItem = document.createElement("H1");
+          var newItem = document.createElement("p");
+
+          newItem.setAttribute("id", "newListItem");
           //Add users text to h1
           newItem.innerHTML = text;
           //Adds new h1 elements to checklist div
-          document.getElementById("checklist").appendChild(newItem);
+          document.getElementById("checkList").appendChild(newItem);
           //Function that removes list item when item is clicked
             newItem.onclick = function() {
               this.parentNode.removeChild(this);
@@ -48,9 +58,22 @@
 
     function clearList(){
       //Clears checklist div
-      document.getElementById("checklist").innerHTML = "";
+      document.getElementById("checkList").innerHTML = "";
       //Focus back to field
       document.getElementById("textBox").focus();
+    }
+
+    document.addEventListener("click", checkEmpty);
+
+    function checkEmpty(){
+      if (document.getElementById("checkList").innerHTML === "") {
+        document.getElementById("listHeader").style.display = "none";
+        document.getElementById("buttonClear").style.display = "none";
+      }
+      else {
+        document.getElementById("listHeader").style.display = "block";
+        document.getElementById("buttonClear").style.display = "block";
+      }
     }
 
     </script>
