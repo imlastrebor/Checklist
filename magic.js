@@ -15,9 +15,10 @@ function addToList() {
       var newItem = document.createElement("p");
 
       newItem.setAttribute("id", "newListItem");
-      //Add users text to h1
+
+      //Add users text to p
       newItem.innerHTML = text;
-      //Adds new h1 elements to checklist div
+      //Adds new p elements to checklist div
       document.getElementById("checkList").appendChild(newItem);
       //Function that removes list item when item is clicked
         newItem.onclick = function() {
@@ -39,6 +40,7 @@ function clearList(){
 
 document.addEventListener("click", checkEmpty);
 
+//If list has items function sets list header and clear button visible
 function checkEmpty(){
   if (document.getElementById("checkList").innerHTML === "") {
     document.getElementById("listHeader").style.display = "none";
